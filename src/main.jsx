@@ -11,6 +11,7 @@ import EditProfileView from "./routes/editProfileView.jsx";
 import SignOutView from "./routes/signOutView.jsx";
 import PublicProfileView from "./routes/publicProfileView.jsx";
 
+// Define routes for the application
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Routes>

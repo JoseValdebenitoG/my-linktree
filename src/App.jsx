@@ -1,32 +1,27 @@
 import { useState } from "react";
-import viteLogo from "/vite.svg";
+import shirtLogo from "/logoCircle.png";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  function goLogin() {
+    window.location.href = "/login";
+  }
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={viteLogo} className="logo " alt="React logo" />
+        <a href="https://www.github.com/josevaldebenitog" target="_blank">
+          <img src={shirtLogo} className="logo" alt="Black shirt logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>My Link Tree App</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={goLogin}>
+          <i className="material-icons">account_box</i>
+          <span>Ingresar</span>
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <p>Ingresa y manten tus enlaces de redes sociales en un solo lugar.</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }

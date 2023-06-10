@@ -99,3 +99,31 @@ export async function getUserInfo(uid) {
     return document.data();
   } catch (error) {}
 }
+
+export async function insertNewLink(link) {
+  try {
+    const collectionRef = collection(db, "links");
+    const res = await addDoc(collectionRef, link);
+    return res;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// get links of one user. with the uid
+export async function getLinks(uid) {
+  const links = [];
+  try {
+    const collectionRef = collection(db, "links");
+    const q = query(collectionRef, where("uid", "==", uid));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      const link = { ...doc.data() };
+      link.docId = doc.id;
+      links.push(link);
+    });
+    return links;
+  } catch (error) {
+    console.error(error);
+  }
+}

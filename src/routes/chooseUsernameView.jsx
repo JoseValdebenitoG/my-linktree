@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AuthProvider from "../components/authProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { existsUsername, updateUser } from "../firebase/firebase";
 
 export default function chooseUsernameView() {

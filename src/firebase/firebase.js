@@ -51,7 +51,6 @@ export async function userExists(uid) {
   const docRef = doc(db, "users", uid);
   // get the document if exist
   const res = await getDoc(docRef);
-  console.log(res);
   return res.exists();
 }
 
@@ -123,6 +122,46 @@ export async function getLinks(uid) {
       links.push(link);
     });
     return links;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function updateLink(docId, link) {
+  try {
+    const docRef = doc(db, "links", docId);
+    const res = await updateDoc(docRef, link);
+    return res;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function deleteLink(docId) {
+  try {
+    const docRef = doc(db, "links", docId);
+    const res = await deleteDoc(docRef);
+    return res;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function setUserProfilePhoto(uid, file) {
+  try {
+    const imageRef = ref(storage, `images/${uid}`);
+    const resUpload = await uploadBytes(imageRef, file);
+    return resUpload;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function getProfilePhotoUrl(profilePicture) {
+  try {
+    const imageRef = ref(storage, profilePicture);
+    const url = await getDownloadURL(imageRef);
+    return url;
   } catch (error) {
     console.error(error);
   }

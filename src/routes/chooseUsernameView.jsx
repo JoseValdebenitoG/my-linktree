@@ -27,8 +27,9 @@ export default function chooseUsernameView() {
   }
   // capture input data and send
   function handleInputUsername(e) {
-    setUsername(e.target.value);
-    console.log(username);
+    const username = e.target.value;
+    const lowerUsername = username.toLowerCase();
+    setUsername(lowerUsername);
   }
 
   // verifing if the username already exists

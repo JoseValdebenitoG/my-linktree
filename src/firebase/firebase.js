@@ -62,12 +62,11 @@ export async function existsUsername(username) {
 
   // create the query with the username
   const q = query(docsRef, where("username", "==", username));
-
   // get the data for the documents
   const querySnapshot = await getDocs(q);
-
   // iterate over the documents and add them to an array
   querySnapshot.forEach((doc) => {
+    // console.log("foreach", doc.id, " => ", doc.data());
     // add the document to the array
     users.push(doc.data());
   });
@@ -165,4 +164,17 @@ export async function getProfilePhotoUrl(profilePicture) {
   } catch (error) {
     console.error(error);
   }
+}
+
+export async function getUserPublicProfileInfo(uid) {
+  const profileInfo = await getUserInfo(uid);
+  const linksInfo = await getLinks(uid);
+  return {
+    profileInfo: profileInfo,
+    linksInfo: linksInfo,
+  };
+}
+
+export async function logOut() {
+  await auth.signOut();
 }

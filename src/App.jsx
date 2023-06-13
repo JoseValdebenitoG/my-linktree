@@ -1,6 +1,5 @@
-import { useState } from "react";
 import shirtLogo from "/logoCircle.png";
-import "./App.css";
+import "./styles/App.css";
 
 function App() {
   function goLogin() {

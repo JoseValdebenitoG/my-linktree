@@ -1,0 +1,11 @@
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+#google-icon {
+  color: #646cff; 
+  height: 20px;
+  width: 60px;
+  margin-bottom: 10px;
+}

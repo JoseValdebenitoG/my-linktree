@@ -1,12 +1,27 @@
-import React from "react";
-import DashboardWrapper from "../components/dashboardWrapper";
+import AuthProvider from "../components/authProvider";
+import { useNavigate } from "react-router-dom";
+import { logOut } from "../firebase/firebase";
 
 export default function signOutView() {
+  const navigate = useNavigate();
+
+  async function handleUserLoggedIn(user) {
+    await logOut();
+  }
+
+  function handleUserNotRegistered(user) {
+    navigate("/login");
+  }
+  // if user is not logged in, go to login
+  function handleUserNotLoggedIn() {
+    navigate("/login");
+  }
+
   return (
-    <DashboardWrapper>
-      <div>
-        <h1>signOutView</h1>
-      </div>
-    </DashboardWrapper>
+    <AuthProvider
+      onUserLoggedIn={handleUserLoggedIn}
+      onUserNotLoggedIn={handleUserNotLoggedIn}
+      onUserNotRegistered={handleUserNotRegistered}
+    ></AuthProvider>
   );
 }

@@ -3,6 +3,7 @@ import { auth } from "../firebase/firebase";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthProvider from "../components/authProvider";
+import "../styles/loginView.css";
 
 export default function LoginView() {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ export default function LoginView() {
    * 4: no user logged in
    * 5: username already exists
    * 6: new username, click to continue
+   * 7: username no existe
    */
 
   // event click on button to register with google
@@ -53,9 +55,14 @@ export default function LoginView() {
   // return components according to the state
   if (state === 4) {
     return (
-      <div>
+      <div className="container">
+        <div>
+          <h1>My Link Tree</h1>
+        </div>
         <button onClick={handleOnClick}>
-          <i className="material-icons">Google</i>
+          <i className="material-icons" id="google-icon">
+            Google
+          </i>
           Login with Google
         </button>
       </div>

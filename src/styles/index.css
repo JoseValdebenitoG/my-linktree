@@ -13,6 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+#root {
+  width: 100vw;
+  padding: 0;
+  top: 0;
+  height: 100vh;
+}
 
 a {
   font-weight: 500;
@@ -44,10 +50,10 @@ h1 {
 }
 button {
   display: flex;
-  align-items: center;
+  align-items:center;
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.4em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -62,8 +68,33 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-i {
+
+input[type='text']{
+  border: solid 1px #646cff;
+  border-radius: 3px;
+  padding: 8px 10px;
+}
+
+label {
+  padding-top: 5px;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 25px;
+  display: inline;
+  line-height: auto;
+  text-transform: none;
+  letter-spacing: normal;
   margin-right: 6px;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga";
 }
 
 @media (prefers-color-scheme: light) {

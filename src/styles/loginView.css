@@ -1,11 +1,24 @@
-.container{
+.loginContainer{
+  align-content: center;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+}
+.loginBtn {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: center;
+  margin-top: 2rem;
+  width: 20em;
 }
 
 #google-icon {
   color: #646cff; 
   height: 20px;
-  width: 60px;
+  width: 30px;
   margin-bottom: 10px;
 }

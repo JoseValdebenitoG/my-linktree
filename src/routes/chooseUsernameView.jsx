@@ -2,6 +2,7 @@ import { useState } from "react";
 import AuthProvider from "../components/authProvider";
 import { useNavigate } from "react-router-dom";
 import { existsUsername, updateUser } from "../firebase/firebase";
+import "../styles/chooseUsernameView.css";
 
 export default function chooseUsernameView() {
   const navigate = useNavigate();
@@ -54,18 +55,16 @@ export default function chooseUsernameView() {
   // @param {user}
   if (state === 3 || state === 5) {
     return (
-      <div>
-        <h1>Bienvenido {currentUser.displayName}</h1>
-        <p>Para terminar el proceso elige un nombre de usuario</p>
-        {state === 5 ? <p>El nombre de usuario ya existe</p> : null}
-        <div>
+      <div className="container">
+        <h1>Bienvenido {currentUser.displayName} !</h1>
+        <section className="chooseWrapper">
+          <p>Para terminar el proceso elige un nombre de usuario</p>
+          {state === 5 ? <p>El nombre de usuario ya existe</p> : null}
           <input type="text" onInput={handleInputUsername} />
-        </div>
-        <div className="card">
-          <button onClick={handleContinue}>
+          <button className="chooseUsrBtn" onClick={handleContinue}>
             Continuar <i className="material-icons">chevron_right</i>
           </button>
-        </div>
+        </section>
       </div>
     );
   }
@@ -76,12 +75,12 @@ export default function chooseUsernameView() {
   // render page depending state, 6 if username saved
   if (state === 6) {
     return (
-      <div>
+      <div className="container">
         <h1>Felicidades {currentUser.displayName}</h1>
         <p>
           Tu nombre de usuario ha sido guardado, ya puedes agregar tus links
         </p>
-        <div className="card">
+        <div>
           <button onClick={goDashBoard}>
             Continuar <i className="material-icons">chevron_right</i>
           </button>

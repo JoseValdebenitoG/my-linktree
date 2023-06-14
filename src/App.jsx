@@ -8,18 +8,22 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="container">
         <a href="https://www.github.com/josevaldebenitog" target="_blank">
           <img src={shirtLogo} className="logo" alt="Black shirt logo" />
         </a>
       </div>
-      <h1>My Link Tree App</h1>
-      <div className="card">
+      <h1 className="homeTitle">My Link Tree App</h1>
+      <div className="container">
         <button onClick={goLogin}>
           <i className="material-icons">account_box</i>
           <span>Ingresar</span>
         </button>
-        <p>Ingresa y manten tus enlaces de redes sociales en un solo lugar.</p>
+        <div className="homeTextWrapper">
+          <p className="homeText">
+            Ingresa y manten tus enlaces de redes sociales en un solo lugar.
+          </p>
+        </div>
       </div>
     </>
   );

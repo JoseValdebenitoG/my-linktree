@@ -55,11 +55,11 @@ export default function LoginView() {
   // return components according to the state
   if (state === 4) {
     return (
-      <div className="container">
+      <div className="loginContainer">
         <div>
           <h1>My Link Tree</h1>
         </div>
-        <button onClick={handleOnClick}>
+        <button className="loginBtn" onClick={handleOnClick}>
           <i className="material-icons" id="google-icon">
             Google
           </i>

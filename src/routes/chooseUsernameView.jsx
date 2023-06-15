@@ -60,7 +60,11 @@ export default function chooseUsernameView() {
         <section className="chooseWrapper">
           <p>Para terminar el proceso elige un nombre de usuario</p>
           {state === 5 ? <p>El nombre de usuario ya existe</p> : null}
-          <input type="text" onInput={handleInputUsername} />
+          <input
+            type="text"
+            onInput={handleInputUsername}
+            className="chooseUsrInput"
+          />
           <button className="chooseUsrBtn" onClick={handleContinue}>
             Continuar <i className="material-icons">chevron_right</i>
           </button>
@@ -77,11 +81,11 @@ export default function chooseUsernameView() {
     return (
       <div className="container">
         <h1>Felicidades {currentUser.displayName}</h1>
-        <p>
+        <p className="chooseTextWelcome">
           Tu nombre de usuario ha sido guardado, ya puedes agregar tus links
         </p>
         <div>
-          <button onClick={goDashBoard}>
+          <button onClick={goDashBoard} className="chooseUsrBtn">
             Continuar <i className="material-icons">chevron_right</i>
           </button>
         </div>

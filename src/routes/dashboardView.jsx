@@ -10,6 +10,7 @@ import {
   deleteLink,
 } from "../firebase/firebase";
 import LinkProvider from "../components/linkProvider";
+import "../styles/dashboardView.css";
 
 export default function dashboardView() {
   const navigate = useNavigate();
@@ -99,31 +100,37 @@ export default function dashboardView() {
 
   return (
     <DashboardWrapper>
-      <div>
-        <h1>Dashboard</h1>
-      </div>
-      <form action="" onSubmit={handleOnSubmit}>
-        <label htmlFor="title">Title</label>
-        <input type="text" name="title" id="title" onChange={handleOnChange} />
+      <div className="dashWrapper">
+        <h1 className="dashTitle">Dashboard</h1>
 
-        <label htmlFor="url">Url</label>
-        <input type="text" name="url" id="url" onChange={handleOnChange} />
-
-        <input type="submit" value="Crear nuevo Link" />
-      </form>
-
-      <div>
-        <h2>Mis Links</h2>
-        {links.map((link) => (
-          <LinkProvider
-            key={link.docId}
-            docId={link.docId}
-            url={link.url}
-            title={link.title}
-            onDelete={handleDeleteLink}
-            onUpdate={handleUpdateLink}
+        <form action="" onSubmit={handleOnSubmit} className="dashForm">
+          <label htmlFor="title">Title</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            onChange={handleOnChange}
           />
-        ))}
+
+          <label htmlFor="url">Url</label>
+          <input type="text" name="url" id="url" onChange={handleOnChange} />
+
+          <input type="submit" value="Crear nuevo Link" />
+        </form>
+
+        <div className="linkWrapper">
+          <h2 className="linkWrapperTitle">Mis Links</h2>
+          {links.map((link) => (
+            <LinkProvider
+              key={link.docId}
+              docId={link.docId}
+              url={link.url}
+              title={link.title}
+              onDelete={handleDeleteLink}
+              onUpdate={handleUpdateLink}
+            />
+          ))}
+        </div>
       </div>
     </DashboardWrapper>
   );

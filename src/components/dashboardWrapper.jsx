@@ -1,21 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import style from "../styles/dashboardWrapper.module.css";
-import logoBSD from "../../public/logoCircle.png";
+import "../styles/dashboardWrapper.css";
+import logoBSD from "../image/logoCircle.png";
 
 export default function DashboardWrapper({ children }) {
   return (
     <div>
-      <nav className={style.nav}>
-        <img src={logoBSD} className={style.logo} />
-        <div className={style.navMenu}>
-          <Link className={style.navMenuItem} to="/dashboard">
-            Links
+      <nav className="navBar">
+        <img src={logoBSD} className="logoNavBar" />
+        <div className="navMenu">
+          <Link className="navMenuItem" to="/dashboard">
+            Dashboard
           </Link>
-          <Link className={style.navMenuItem} to="/dashboard/profile">
+          <Link className="navMenuItem" to="/dashboard/profile">
             Profile
           </Link>
-          <Link className={style.navMenuItem} to="/signout">
+          <Link className="navMenuItem" to="/signout">
             Signout
           </Link>
         </div>

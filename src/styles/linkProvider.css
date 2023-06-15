@@ -1,0 +1,21 @@
+.linkCard {
+  align-items: center;
+  background: var(--bg-300);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+  margin: .5em auto;
+  width: 70vw;
+}
+
+.linkCardTitle {
+  display: flex;
+  flex-direction: row;
+  margin: .5em auto;
+}
+.linkCardUrl {
+  display: flex;
+  flex-direction: row;
+}

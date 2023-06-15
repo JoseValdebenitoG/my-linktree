@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import "../styles/linkProvider.css";
+
 export default function LinkProvider({
   docId,
   title,
@@ -52,9 +54,9 @@ export default function LinkProvider({
     onDelete(docId);
   }
   return (
-    <div key={docId}>
+    <div key={docId} className="linkCard">
       <div>
-        <div>
+        <div className="linkCardTitle">
           {editTitle ? (
             <>
               <input
@@ -71,7 +73,7 @@ export default function LinkProvider({
             </>
           )}
         </div>
-        <div>
+        <div className="linkCardUrl">
           {editUrl ? (
             <>
               <input

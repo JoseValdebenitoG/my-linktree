@@ -55,7 +55,7 @@ export default function LoginView() {
   // return components according to the state
   if (state === 4) {
     return (
-      <div className="loginContainer">
+      <div className="container">
         <div>
           <h1>My Link Tree</h1>
         </div>

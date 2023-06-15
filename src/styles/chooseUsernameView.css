@@ -8,8 +8,17 @@
   border-left: solid 3px var(--primary-100);
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  margin-top: 2em;
+}
+
+.chooseUsrInput {
+  margin-top: 2em;
 }
 
 .chooseUsrBtn {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+}
+
+.chooseTextWelcome {
+  margin-top: 2em;
 }

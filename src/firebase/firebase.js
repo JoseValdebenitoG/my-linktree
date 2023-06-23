@@ -129,7 +129,7 @@ export async function getLinks(uid) {
 export async function updateLink(docId, link) {
   try {
     const docRef = doc(db, "links", docId);
-    const res = await updateDoc(docRef, link);
+    const res = await setDoc(docRef, link);
     return res;
   } catch (error) {
     console.error(error);

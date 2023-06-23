@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthProvider from "../components/authProvider";
 import DashboardWrapper from "../components/dashboardWrapper";
@@ -20,6 +20,8 @@ export default function dashboardView() {
   const [url, setUrl] = useState("");
   const [links, setLinks] = useState([]);
 
+  const formRef = useRef(null);
+
   // if user is registerded, set current user
   async function handleUserLoggedIn(user) {
     setCurrentUser(user);
@@ -39,6 +41,7 @@ export default function dashboardView() {
   function handleOnSubmit(event) {
     event.preventDefault();
     addLink();
+    formRef.current.reset();
   }
 
   function addLink() {
@@ -55,9 +58,9 @@ export default function dashboardView() {
       // add new link to database
       const res = insertNewLink(newLink);
       newLink.docId = res.id;
+      setLinks([...links, newLink]);
       setTitle("");
       setUrl("");
-      setLinks([...links, newLink]);
     }
   }
 
@@ -72,7 +75,6 @@ export default function dashboardView() {
     }
   }
 
-  // TODO
   async function handleDeleteLink(docId) {
     await deleteLink(docId);
     const newLinks = links.filter((item) => item.docId !== docId);
@@ -103,7 +105,7 @@ export default function dashboardView() {
       <div className="dashWrapper">
         <h1 className="dashTitle">Dashboard</h1>
 
-        <form action="" onSubmit={handleOnSubmit} className="dashForm">
+        <form ref={formRef} onSubmit={handleOnSubmit} className="dashForm">
           <label htmlFor="title">Title</label>
           <input
             type="text"
@@ -122,7 +124,7 @@ export default function dashboardView() {
           <h2 className="linkWrapperTitle">Mis Links</h2>
           {links.map((link) => (
             <LinkProvider
-              key={link.docId}
+              key={link.id}
               docId={link.docId}
               url={link.url}
               title={link.title}

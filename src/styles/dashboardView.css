@@ -19,12 +19,15 @@
 .dashForm label {
   font-family: 'Amaranth', sans-serif;
   font-size: 1.5em;
+  font-style: italic;
   font-weight: 400;
-  margin: .5em auto;
+  margin: .5em auto .5em .3em;
+  text-align: left;
 }
 
 .dashForm input[type='text'] {
   width: 15rem;
+  font-size: 1.1em;
 }
 
 .dashForm input[type='submit'] {
@@ -53,5 +56,6 @@
 .linkWrapperTitle {
   font-family: 'Amaranth';
   font-size: 2.2em;
+  font-style: italic;
   margin: 1em auto;
 }

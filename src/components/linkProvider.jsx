@@ -53,8 +53,9 @@ export default function LinkProvider({
   function handleDelete() {
     onDelete(docId);
   }
+
   return (
-    <div key={docId} className="linkCard">
+    <div className="linkCard">
       <div>
         <div className="linkCardTitle">
           {editTitle ? (
@@ -64,12 +65,15 @@ export default function LinkProvider({
                 value={currentTitle}
                 onChange={handleChangeTitle}
                 onBlur={handleBlurTitle}
+                type="text"
               />
             </>
           ) : (
             <>
-              <button onClick={handleEditTitle}>Edit</button>
-              {currentTitle}
+              <button onClick={handleEditTitle}>
+                <i className="material-icons">edit</i>
+              </button>
+              <p className="linkTitle">{currentTitle}</p>
             </>
           )}
         </div>
@@ -81,18 +85,23 @@ export default function LinkProvider({
                 value={currentUrl}
                 onChange={handleChangeUrl}
                 onBlur={handleBlurUrl}
+                type="text"
               />
             </>
           ) : (
             <>
-              <button onClick={handleEditUrl}>Edit</button>
-              {currentUrl}
+              <button onClick={handleEditUrl}>
+                <i className="material-icons">edit</i>
+              </button>
+              <p className="linkUrl">{currentUrl}</p>
             </>
           )}
         </div>
       </div>
       <div>
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={handleDelete}>
+          <i className="material-icons">delete</i>
+        </button>
       </div>
     </div>
   );

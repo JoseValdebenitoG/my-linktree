@@ -11,7 +11,7 @@ function App() {
         </a>
       </div>
       <h1 className="homeTitle">My Link Tree App</h1>
-      <Link to="/login">
+      <Link to="/dashboard">
         <button className="homeEnterBtn">
           <i className="material-icons">account_box</i>
           <span>Ingresar</span>

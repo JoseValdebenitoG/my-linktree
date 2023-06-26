@@ -44,12 +44,12 @@ export default function PublicProfileView() {
   }
 
   return (
-    <div>
+    <div className="container">
+      <h2 className="profileTitle">{profile?.profileInfo.username}</h2>
       <div>
-        <img src={url} alt="Profile Picture" />
+        <img src={url} alt="Profile Picture" className="profilePic" />
       </div>
-      <h2>{profile?.profileInfo.username}</h2>
-      <h3>{profile?.profileInfo.displayName}</h3>
+      <h3 className="profileTitle">{profile?.profileInfo.displayName}</h3>
       <div>
         {profile?.linksInfo.map((link) => (
           <PublicLink key={link.docId} url={link.url} title={link.title} />

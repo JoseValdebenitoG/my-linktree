@@ -1,0 +1,35 @@
+.profileTitle {
+  font-family: 'Amaranth', sans-serif;
+  font-size: 1.8em;
+  margin: .3em auto 1.5em auto;
+  color: var(--text-200);
+}
+
+.profilePic {
+  border-radius: 50%;
+  box-shadow: 0 5px 10px var(--accent-100);
+  width: 180px;
+}
+
+.profileChooserPic {
+  margin-top: 2em;
+}
+.profileLinkCard {
+  background: var(--accent-100);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  color: var(--text-200);
+  display: flex;
+  flex-direction: row;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  justify-content: space-between;
+  padding: 1em;
+  margin: .7em auto;
+  width: 30vw;
+}
+.textCopied {
+  color: var(--accent-100);
+  font-family: 'Amaranth', sans-serif;
+  font-size: 1.5em;
+}

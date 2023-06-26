@@ -10,6 +10,7 @@ import DashboardView from "./routes/dashboardView.jsx";
 import EditProfileView from "./routes/editProfileView.jsx";
 import SignOutView from "./routes/signOutView.jsx";
 import PublicProfileView from "./routes/publicProfileView.jsx";
+import "animate.css/animate.min.css";
 
 // Define routes for the application
 ReactDOM.createRoot(document.getElementById("root")).render(

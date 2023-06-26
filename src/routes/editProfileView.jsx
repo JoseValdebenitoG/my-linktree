@@ -4,9 +4,12 @@ import DashboardWrapper from "../components/dashboardWrapper";
 import AuthProvider from "../components/authProvider";
 import {
   getProfilePhotoUrl,
+  getUserInfo,
   setUserProfilePhoto,
   updateUser,
 } from "../firebase/firebase";
+import "../styles/editProfileView.css";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export default function EditProfileView() {
   const navigate = useNavigate();
@@ -14,6 +17,8 @@ export default function EditProfileView() {
   const [currentUser, setCurrentUser] = useState({});
   const [profileUrl, setProfileUrl] = useState(null);
   const fileRef = useRef();
+  const [username, setUsername] = useState("");
+  const [copied, setCopied] = useState(false);
 
   async function handleUserLoggedIn(user) {
     setCurrentUser(user);
@@ -75,16 +80,18 @@ export default function EditProfileView() {
       </AuthProvider>
     );
   }
+  // variabe para copiar url
+  let currentUrl = "mylinks.com/u/" + currentUser.username;
 
   return (
     <DashboardWrapper>
-      <div>
-        <h2>Edit Profile Info</h2>
-        <div>
+      <div className="container">
+        <h2 className="profileTitle">Edita tu perfil</h2>
+        <div className="container">
           <div>
-            <img src={profileUrl} alt="" width={100} />
+            <img src={profileUrl} alt="" className="profilePic" />
           </div>
-          <div>
+          <div className="profileChooserPic">
             <button onClick={handleOpenFilePicker}>
               Elije una imagen para tu perfil
             </button>
@@ -94,6 +101,18 @@ export default function EditProfileView() {
               style={{ display: "none" }}
               onChange={handleChangeFile}
             />
+          </div>
+          <div>
+            <h3 className="profileTitle">Tu url es</h3>
+            <span className="profileLinkCard">
+              {currentUrl}
+              <CopyToClipboard text={currentUrl}>
+                <i className="material-icons" onClick={() => setCopied(true)}>
+                  content_copy
+                </i>
+              </CopyToClipboard>
+            </span>
+            {copied && <p className="textCopied">Link Copiado!</p>}
           </div>
         </div>
       </div>

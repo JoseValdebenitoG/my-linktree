@@ -13,6 +13,10 @@ Con esta aplicación utilicé servicios de **_Firebase_** como:
 
 en cuanto a los estilos utilicé _CSS_ puro, estilizando cada componente.
 
+[![React](https://img.shields.io/badge/Ract-blue?style=flat-square&logo=React&logoColor=white&labelColor=101010)]()
+[![CSS](https://img.shields.io/badge/CSS-blue?style=flat-square&logo=CSS3&logoColor=white&labelColor=101010)]()
+[![Firebase](https://img.shields.io/badge/Firebase-yellow?style=flat-square&logo=firebase&logoColor=white&labelColor=101010)]()
+
 ---
 
 ![Dashboard|100](./src/image/SSDashboard.png)
@@ -22,7 +26,3 @@ en cuanto a los estilos utilicé _CSS_ puro, estilizando cada componente.
 En la vista de Perfil, la imagen de perfil se guarda en **Firebase** y nos mostrará nuestra url para copiarla y compartirla.
 
 ![Profile|100](./src/image/SSProfile.png)
-
-[![React](https://img.shields.io/badge/Ract-blue?style=flat-square&logo=React&logoColor=white&labelColor=101010)]()
-[![CSS](https://img.shields.io/badge/CSS-blue?style=flat-square&logo=CSS3&logoColor=white&labelColor=101010)]()
-[![Firebase](https://img.shields.io/badge/Firebase-yellow?style=flat-square&logo=firebase&logoColor=white&labelColor=101010)]()

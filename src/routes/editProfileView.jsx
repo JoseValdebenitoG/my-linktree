@@ -81,7 +81,7 @@ export default function EditProfileView() {
     );
   }
   // variabe para copiar url
-  let currentUrl = "https://my-linktree-app.web.app/u" + currentUser.username;
+  let currentUrl = "https://my-linktree-app.web.app/u/" + currentUser.username;
 
   return (
     <DashboardWrapper>
